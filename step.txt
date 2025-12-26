@@ -1,0 +1,25 @@
+CORRECT WAY TO UPGRADE SDK (WORKING FIX)
+🔹 STEP 1: Project folder ma confirm karo
+pwd
+
+
+(jya app.json / package.json hoy e folder)
+
+🔹 STEP 2: Expo SDK ne latest par upgrade karo
+npx expo install expo@latest
+
+
+👉 Aa command:
+
+Expo SDK ne 54 par laay jaay
+
+Version mismatch solve kare
+
+🔹 STEP 3: All dependencies auto-fix
+npx expo install --fix
+
+
+👉 Aa badha compatible versions install kare
+
+🔹 STEP 4: Clear cache & restart
+npx expo start -c
