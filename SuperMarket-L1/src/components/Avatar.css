@@ -1,0 +1,175 @@
+.avatar-container-simple {
+  position: absolute;
+  left: 25%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  z-index: 15;
+}
+
+.avatar-simple {
+  position: relative;
+  width: 200px;
+  height: 220px;
+  animation: breathe 3s ease-in-out infinite;
+}
+
+/* Elephant Body */
+.elephant-body-simple {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.head-simple {
+  position: absolute;
+  width: 160px;
+  height: 140px;
+  background: linear-gradient(135deg, #90caf9 0%, #64b5f6 100%);
+  border-radius: 50%;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Ears */
+.ear-simple {
+  position: absolute;
+  width: 60px;
+  height: 80px;
+  background: linear-gradient(135deg, #64b5f6 0%, #42a5f5 100%);
+  border-radius: 50%;
+  top: 5px;
+}
+
+.ear-left-simple {
+  left: -30px;
+  transform: rotate(-25deg);
+}
+
+.ear-right-simple {
+  right: -30px;
+  transform: rotate(25deg);
+}
+
+/* Face */
+.face-simple {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Eyes */
+.eye-simple {
+  position: absolute;
+  width: 22px;
+  height: 28px;
+  background: white;
+  border-radius: 50%;
+  top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.eye-left-simple {
+  left: 40px;
+}
+
+.eye-right-simple {
+  right: 40px;
+}
+
+.pupil-simple {
+  width: 12px;
+  height: 12px;
+  background: #212121;
+  border-radius: 50%;
+  animation: blink 4s ease-in-out infinite;
+}
+
+/* Smile */
+.smile {
+  position: absolute;
+  width: 50px;
+  height: 25px;
+  border: 4px solid #424242;
+  border-top: none;
+  border-radius: 0 0 50px 50px;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Trunk */
+.trunk-simple {
+  position: absolute;
+  width: 28px;
+  height: 70px;
+  background: linear-gradient(180deg, #64b5f6 0%, #42a5f5 100%);
+  border-radius: 0 0 50% 50%;
+  bottom: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Tusks */
+.tusk-simple {
+  position: absolute;
+  width: 10px;
+  height: 24px;
+  background: #fff;
+  border-radius: 50%;
+  bottom: 8px;
+}
+
+.tusk-left-simple {
+  left: 45px;
+  transform: rotate(-12deg);
+}
+
+.tusk-right-simple {
+  right: 45px;
+  transform: rotate(12deg);
+}
+
+/* Shopkeeper Apron */
+.shopkeeper-apron {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 60px;
+  background: linear-gradient(135deg, #fff9c4 0%, #fff59d 100%);
+  border-radius: 0 0 16px 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 3px solid #f57c00;
+}
+
+.apron-strap {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 20px;
+  background: #f57c00;
+  border-radius: 10px;
+}
+
+/* Reactions */
+.avatar-container-simple.happy .avatar-simple {
+  animation: nod-happy 0.5s ease-in-out;
+}
+
+.reaction-bubble-simple {
+  position: absolute;
+  top: -40px;
+  right: -30px;
+  font-size: 48px;
+  animation: scale-in 0.3s ease-out;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}

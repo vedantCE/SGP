@@ -1,0 +1,53 @@
+/* Global Reset & ADHD-Friendly Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans Gujarati', sans-serif;
+  overflow: hidden;
+  background: linear-gradient(135deg, #e3f2fd 0%, #fce4ec 100%);
+  user-select: none;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ADHD-Friendly Design Tokens */
+:root {
+  --color-bg-light: #f0f7ff;
+  --color-bg-cart: #fff9c4;
+  --color-bg-avatar: #e1f5fe;
+  --color-bg-shelf: #fce4ec;
+  --color-primary: #64b5f6;
+  --color-success: #81c784;
+  --color-warning: #ffb74d;
+  --color-text: #424242;
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+  --shadow-soft: 0 4px 16px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Smooth transitions for all interactive elements */
+button, .draggable-item, .cart-area {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Remove default focus outlines, add custom ones */
+*:focus {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+/* Ensure text is readable */
+p, span, h1, h2, h3 {
+  color: var(--color-text);
+  line-height: 1.6;
+}

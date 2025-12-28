@@ -1,0 +1,233 @@
+
+/* Main Container - Fixed Position & Constraints */
+.purchase-list-container {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  width: 280px;
+  background: white;
+  border-radius: 20px;
+  /* STRICT: Never exceed 90% of viewport height */
+  max-height: 90vh;
+  box-shadow: 
+    0 8px 24px rgba(0, 0, 0, 0.12),
+    0 2px 6px rgba(0, 0, 0, 0.08); 
+  border: 3px solid #fff;
+  z-index: 900;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Ensure rounded corners clip content */
+}
+
+/* Header Section */
+.purchase-header {
+  background: linear-gradient(135deg, #fff9c4, #fff59d);
+  padding: 12px 16px;
+  border-bottom: 2px solid #f0f0f0;
+  flex-shrink: 0; /* Never shrink header */
+  border-radius: 16px 16px 0 0;
+}
+
+.purchase-header h3 {
+  margin: 0;
+  color: #424242;
+  font-size: 18px;
+  font-weight: 800;
+  text-align: center;
+}
+
+/* Scrollable Item Area */
+.items-scroll-area {
+  flex: 1; /* Grow to fill available space */
+  min-height: 0; /* Crucial for nested flex scrolling */
+  overflow-y: auto; /* Scroll internally */
+  padding: 12px;
+  background: #fafafa;
+  scroll-behavior: smooth;
+}
+
+.purchase-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: white;
+  margin-bottom: 8px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  border: 1px solid #eee;
+}
+
+.item-name {
+  font-weight: 700;
+  color: #1a1a1a;
+  font-size: 15px;
+}
+
+.item-price {
+  font-weight: 600;
+  color: #43a047;
+  background: rgba(67, 160, 71, 0.1);
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.empty-message {
+  text-align: center;
+  color: #9e9e9e;
+  font-style: italic;
+  margin-top: 40px;
+  font-size: 14px;
+}
+
+/* Total Check Section Container */
+.total-check-section {
+  padding: 16px;
+  padding-bottom: 24px; /* Sufficient space for button */
+  background: white;
+  border-top: 2px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-shrink: 0;
+  border-radius: 0 0 16px 16px;
+}
+
+.total-check-section label {
+  text-align: center;
+  font-weight: 800;
+  color: #455a64;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+/* Flex Container for Input + Button */
+.input-group {
+  display: flex;
+  align-items: center; /* Vertical Center */
+  gap: 12px;
+  width: 100%;
+}
+
+/* Styled Input Box */
+.input-group input {
+  flex: 1;
+  height: 48px; /* Fixed height for alignment */
+  padding: 0 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 16px; /* Rounded corners */
+  font-size: 20px;
+  text-align: center;
+  font-weight: 800;
+  color: #37474f;
+  background: #fafafa;
+  outline: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.03);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.input-group input:focus {
+  border-color: #ff9800;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(255, 152, 0, 0.15);
+}
+
+.input-group input.success {
+  border-color: #81c784;
+  background: #f1f8e9;
+  color: #2e7d32;
+  box-shadow: none;
+}
+
+/* Styled 'Count' Button */
+.check-btn {
+  height: 48px; /* Matching height */
+  padding: 0 24px;
+  background: linear-gradient(135deg, #ff9800, #f57c00); /* Action Orange */
+  color: white;
+  border: none;
+  border-radius: 16px; /* Rounded corners */
+  font-family: 'Noto Sans Gujarati', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 
+    0 4px 12px rgba(245, 124, 0, 0.3),
+    0 2px 4px rgba(0,0,0,0.1);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px; /* Ensure button doesn't shrink too small */
+}
+
+.check-btn:active {
+  transform: scale(0.96);
+  box-shadow: 0 2px 6px rgba(245, 124, 0, 0.2);
+}
+
+.check-btn:disabled {
+  background: #e0e0e0;
+  color: #9e9e9e;
+  box-shadow: none;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.check-btn.correct {
+  background: linear-gradient(135deg, #66bb6a, #43a047); /* Green Success */
+  box-shadow: 0 4px 12px rgba(67, 160, 71, 0.3);
+}
+
+.check-btn.incorrect {
+  background: linear-gradient(135deg, #ef5350, #d32f2f); /* Red Error */
+  animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+.hint-message {
+  text-align: center;
+  color: #757575;
+  font-size: 13px;
+  background: #fff3e0;
+  padding: 8px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.success-message {
+  text-align: center;
+  color: #2e7d32;
+  font-size: 16px;
+  font-weight: 800;
+  padding: 5px;
+}
+
+@keyframes shake {
+  10%, 90% { transform: translate3d(-1px, 0, 0); }
+  20%, 80% { transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+  40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+/* Ensure scrollbar looks nice */
+.items-scroll-area::-webkit-scrollbar {
+  width: 6px;
+}
+
+.items-scroll-area::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.05); /* Softer track */
+  border-radius: 4px;
+}
+
+.items-scroll-area::-webkit-scrollbar-thumb {
+  background: #bdbdbd; /* Softer gray */
+  border-radius: 4px;
+  border: 2px solid #fafafa; /* visual padding */
+}
+
+.items-scroll-area::-webkit-scrollbar-thumb:hover {
+  background: #9e9e9e;
+}

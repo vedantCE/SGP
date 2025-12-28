@@ -1,0 +1,48 @@
+.grocery-shelf {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg-shelf);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  overflow: hidden;
+}
+
+.shelf-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-text);
+  text-align: center;
+  margin-bottom: 16px;
+  background: white;
+  padding: 12px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+}
+
+.shelf-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  overflow-y: auto;
+  padding: 8px;
+}
+
+/* Hide scrollbar but keep functionality */
+.shelf-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.shelf-grid {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Responsive adjustments */
+@media (max-height: 800px) {
+  .shelf-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

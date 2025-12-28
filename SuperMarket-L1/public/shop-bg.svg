@@ -1,0 +1,64 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Warm Wood Gradient for Walls -->
+    <linearGradient id="wallGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5E6D3;stop-opacity:1" /> <!-- Creamy/Beige Top -->
+      <stop offset="100%" style="stop-color:#E6D2B5;stop-opacity:1" /> <!-- Darker Beige Bottom -->
+    </linearGradient>
+
+    <!-- Floor Gradient -->
+    <linearGradient id="floorGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4BFA0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C4AE8D;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Soft Vignette for Depth -->
+    <radialGradient id="vignette" cx="50%" cy="50%" r="70%" fx="50%" fy="50%">
+      <stop offset="30%" style="stop-color:#000000;stop-opacity:0" />
+      <stop offset="100%" style="stop-color:#5D4037;stop-opacity:0.2" />
+    </radialGradient>
+
+    <!-- Warm Overhead Light -->
+    <radialGradient id="overheadLight" cx="50%" cy="0%" r="60%" fx="50%" fy="0%">
+      <stop offset="0%" style="stop-color:#FFF8E1;stop-opacity:0.6" /> <!-- Warm Light -->
+      <stop offset="100%" style="stop-color:#FFF8E1;stop-opacity:0" />
+    </radialGradient>
+
+    <!-- Wood Grain Pattern -->
+    <pattern id="woodPattern" width="100" height="100" patternUnits="userSpaceOnUse" patternTransform="rotate(0)">
+      <path d="M0 20 Q 25 25 50 20 T 100 20" fill="none" stroke="#8D6E63" stroke-width="1" stroke-opacity="0.1"/>
+      <path d="M0 40 Q 25 35 50 40 T 100 40" fill="none" stroke="#8D6E63" stroke-width="1" stroke-opacity="0.1"/>
+      <path d="M0 60 Q 25 65 50 60 T 100 60" fill="none" stroke="#8D6E63" stroke-width="1" stroke-opacity="0.1"/>
+      <path d="M0 80 Q 25 75 50 80 T 100 80" fill="none" stroke="#8D6E63" stroke-width="1" stroke-opacity="0.1"/>
+    </pattern>
+    
+    <!-- Vertical Plank Lines -->
+    <pattern id="planks" width="120" height="100" patternUnits="userSpaceOnUse">
+       <line x1="118" y1="0" x2="118" y2="100" style="stroke:#8D6E63;stroke-width:2;stroke-opacity:0.15" />
+    </pattern>
+
+  </defs>
+
+  <!-- Background Wall -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#wallGradient)" />
+  
+  <!-- Wood Texture Overlay -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#woodPattern)" />
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#planks)" />
+
+  <!-- Floor Area (Bottom ~15%) -->
+  <rect x="0" y="850" width="1920" height="230" fill="url(#floorGradient)" />
+  <!-- Floor Perspective Lines -->
+  <line x1="0" y1="850" x2="1920" y2="850" style="stroke:#8D6E63;stroke-width:2;stroke-opacity:0.2" />
+  
+  <!-- Subtle Corners / Depth (Walls) -->
+  <!-- Left Wall Shadow hint -->
+  <path d="M0 0 L 100 0 L 0 1080 Z" fill="#8D6E63" fill-opacity="0.05" />
+  <!-- Right Wall Shadow hint -->
+  <path d="M1920 0 L 1820 0 L 1920 1080 Z" fill="#8D6E63" fill-opacity="0.05" />
+
+  <!-- Lighting & Atmosphere -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#vignette)" />
+  <rect x="0" y="0" width="1920" height="600" fill="url(#overheadLight)" />
+
+</svg>

@@ -1,0 +1,84 @@
+.shelf {
+  position: relative;
+  margin-bottom: 30px;
+  padding: 24px; /* Increased from 20px for more depth */
+  background: linear-gradient(145deg, #dcdcdc, #f0f0f0);
+  border-radius: 14px;
+  box-shadow: 
+    /* Stronger shadow below for depth */
+    0 8px 24px rgba(0, 0, 0, 0.15),
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    /* Top highlight */
+    inset 0 3px 6px rgba(255, 255, 255, 0.9),
+    /* Bottom inner shadow for thickness */
+    inset 0 -2px 4px rgba(0, 0, 0, 0.08);
+  border: 3px solid rgba(255, 255, 255, 0.6); /* Thicker border */
+}
+
+.shelf-label {
+  position: absolute;
+  top: -14px; /* Raised a bit more */
+  left: 20px;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+  color: white;
+  font-size: 15px; /* Slightly larger */
+  font-weight: 700;
+  padding: 8px 18px; /* More padding for pill shape */
+  border-radius: 24px; /* More rounded for pill badge */
+  box-shadow: 
+    0 4px 10px rgba(0, 0, 0, 0.25), /* Stronger shadow */
+    0 2px 4px rgba(0, 0, 0, 0.15);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.shelf-a .shelf-label {
+  background: linear-gradient(135deg, #4caf50, #45a049);
+}
+
+.shelf-b .shelf-label {
+  background: linear-gradient(135deg, #2196f3, #1e88e5);
+}
+
+.shelf-c .shelf-label {
+  background: linear-gradient(135deg, #ff9800, #f57c00);
+}
+
+.shelf-surface {
+  position: relative;
+  padding: 15px 0;
+}
+
+.shelf-surface::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 10px; /* Increased thickness */
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.06));
+  border-radius: 0 0 10px 10px;
+}
+
+.shelf-products {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+/* Enhanced 3D depth effect with stronger shadow */
+.shelf::after {
+  content: '';
+  position: absolute;
+  bottom: -10px; /* Lower shadow for more depth */
+  left: 12px;
+  right: 12px;
+  height: 10px;
+  background: rgba(0, 0, 0, 0.15); /* Darker shadow */
+  border-radius: 50%;
+  filter: blur(8px); /* More blur */
+  z-index: -1;
+}

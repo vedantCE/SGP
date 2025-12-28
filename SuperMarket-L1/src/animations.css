@@ -1,0 +1,116 @@
+/* Unique drop animations for different item types */
+
+@keyframes collect-bounce {
+  0% { 
+    transform: translate(var(--start-x), var(--start-y)) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(var(--mid-x), var(--mid-y)) scale(1.2) rotate(180deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(var(--end-x), var(--end-y)) scale(0) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes collect-spin {
+  0% { 
+    transform: translate(var(--start-x), var(--start-y)) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--end-x), var(--end-y)) scale(0) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+@keyframes collect-fade {
+  0% { 
+    transform: translate(var(--start-x), var(--start-y)) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--end-x), var(--end-y)) scale(0.5);
+    opacity: 0;
+  }
+}
+
+@keyframes collect-scale {
+  0% { 
+    transform: translate(var(--start-x), var(--start-y)) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(var(--mid-x), var(--mid-y)) scale(1.5);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(var(--end-x), var(--end-y)) scale(0);
+    opacity: 0;
+  }
+}
+
+/* Flying item animations */
+.flying-item {
+  position: fixed;
+  z-index: 999;
+  pointer-events: none;
+  font-size: 60px;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
+}
+
+.flying-item.bounce {
+  animation: collect-bounce 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.flying-item.spin {
+  animation: collect-spin 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.flying-item.fade {
+  animation: collect-fade 0.6s ease-out forwards;
+}
+
+.flying-item.scale {
+  animation: collect-scale 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Existing animations */
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+@keyframes blink {
+  0%, 90%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+
+@keyframes nod-happy {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-8px) rotate(5deg); }
+  75% { transform: translateY(-8px) rotate(-5deg); }
+}
+
+@keyframes scale-in {
+  0% { transform: scale(0); opacity: 0; }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(255, 193, 7, 0.5); }
+  50% { box-shadow: 0 0 40px rgba(255, 193, 7, 0.8); }
+}
+
+/* Gentle breathing animation for item cards */
+@keyframes item-breathe {
+  0%, 100% { 
+    transform: scale(1); 
+  }
+  50% { 
+    transform: scale(1.02); 
+  }
+}

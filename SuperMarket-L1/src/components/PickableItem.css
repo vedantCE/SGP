@@ -1,0 +1,27 @@
+.pickable-item {
+  cursor: pointer;
+  text-align: center;
+  user-select: none;
+  z-index: 10;
+}
+
+.pickable-item .item-emoji {
+  font-size: 56px;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.2));
+  margin-bottom: 4px;
+}
+
+.pickable-item .item-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #424242;
+  background: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  display: inline-block;
+}
+
+.pickable-item:hover .item-name {
+  background: #fff9c4;
+}
