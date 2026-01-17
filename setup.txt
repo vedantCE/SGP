@@ -1,0 +1,77 @@
+npm install @react-native-async-storage/async-storage
+cd ios && pod install && cd ..
+
+
+Start STEP 18 – sound + haptic
+DONT USE THIS  X X X
+npm install expo-av
+npm install expo-haptics
+
+🔊 expo-av
+Used to play sound files (mp3, wav)
+Handles:
+loading sound
+replaying sound
+stopping sound
+More stable than random RN sound libraries
+👉 Without this → no sound support
+
+📳 expo-haptics
+Used to trigger vibration / haptic feedback
+Gives system-level vibration (light, success, error)
+👉 Without this → no vibration
+
+
+npm install react-native-sound
+This plays short .mp3 / .wav sounds instantly (perfect for kids apps).
+
+npm install react-native-haptic-feedback
+Gives vibration feedback on success / error → feels “real” 🎮
+
+🔹 STEP 18.4 – Add sound files
+Create folder:
+android/app/src/main/res/raw/
+Add files:
+success.mp3
+fail.mp3
+📌 File names must be lowercase.
+
+
+🔹 STEP B – Add TypeScript declaration (REQUIRED)
+📁 Create this file:
+src/types/react-native-haptic-feedback.d.ts
+
+✍️ Add this EXACT code:
+declare module 'react-native-haptic-feedback' {
+  export type HapticOptions = {
+    enableVibrateFallback?: boolean;
+    ignoreAndroidSystemSettings?: boolean;
+  };
+
+  export function trigger(
+    type:
+      | 'impactLight'
+      | 'impactMedium'
+      | 'impactHeavy'
+      | 'notificationSuccess'
+      | 'notificationWarning'
+      | 'notificationError'
+      | 'selection',
+    options?: HapticOptions,
+  ): void;
+
+  const HapticFeedback: {
+    trigger: typeof trigger;
+  };
+
+  export default HapticFeedback;
+}
+🔹 STEP D – Your import is now VALID ✅
+This will now work without error:
+import HapticFeedback from 'react-native-haptic-feedback';
+
+✅ WHY THIS FIX IS CORRECT
+Library has no official TS types
+React Native CLI expects manual .d.ts
+This is how production apps handle it
+No hacks, no any, no disabling TS
